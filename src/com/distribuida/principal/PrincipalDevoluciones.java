@@ -27,7 +27,7 @@ public class PrincipalDevoluciones {
 	//up
 	Devoluciones Devoluciones2 = new Devoluciones(0,1,new Date(),"roto");	
 	//Devoluciones.up(Devoluciones2);
-	//1212
+	//1212dsadsa
 	
 	//del
 	//DevolucionesDAO.del(1);
