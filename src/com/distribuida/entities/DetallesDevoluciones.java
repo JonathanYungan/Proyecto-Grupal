@@ -26,7 +26,12 @@ private int cantidad;
 	@Column(name = "PrecioUnitario")
 private Double precioUnitario;
 	
-	
+//	@JoinColumn(name = "IdDevolucion")
+//	@JoinColumn(name = "idProducto")
+//	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE, CascadeType.PERSIST,CascadeType.REFRESH})
+//	private Pedido pedido;
+	//private Producto producto:
+
 	public DetallesDevoluciones() {}
 
 
@@ -34,8 +39,8 @@ private Double precioUnitario;
 			Double precioUnitario) {
 		super();
 		this.idDetalleDevolucion = idDetalleDevolucion;
-		this.idDevolucion = idDevolucion;
-		this.idProducto = idProducto;
+		//this.idDevolucion = idDevolucion;
+		//this.idProducto = idProducto;
 		this.cantidad = cantidad;
 		this.precioUnitario = precioUnitario;
 	}

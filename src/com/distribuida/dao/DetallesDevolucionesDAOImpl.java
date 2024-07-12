@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.distribuida.entities.DetallesDevoluciones;
+import com.distribuida.entities.Devoluciones;
 
 @Repository
 public class DetallesDevolucionesDAOImpl implements DetallesDevolucionesDAO {
@@ -28,32 +29,40 @@ public class DetallesDevolucionesDAOImpl implements DetallesDevolucionesDAO {
 	}
 
 	@Override
+	@Transactional
 	public DetallesDevoluciones findOne(int id) {
 		// TODO Auto-generated method stub
-
-				return null;
+				Session session = sessionFactory.getCurrentSession();
+				return session.get(DetallesDevoluciones.class, id);
 }
 	@Override
+	@Transactional
 
 	public void add(DetallesDevoluciones detallesdevoluciones) {
-
 		// TODO Auto-generated method stub
+				Session session = sessionFactory.getCurrentSession();
+				session.saveOrUpdate(detallesdevoluciones);
 
 	}
 
 	@Override
+	@Transactional
 
 	public void up(DetallesDevoluciones detallesdevoluciones ) {
 
 		// TODO Auto-generated method stub
+				Session session = sessionFactory.getCurrentSession();
+				session.saveOrUpdate(detallesdevoluciones);
 
 	}
 
 	@Override
+	@Transactional
 
 	public void del(int id) {
-
 		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		session.delete(findOne(id));
 
 	}
 

@@ -15,28 +15,31 @@ public class PrincipalDevoluciones {
 		//Patron IoC Inversion de Control 
 		
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-	DevolucionesDAO DevolucionesDAO = context.getBean("devolucionesDAOImpl",DevolucionesDAO.class);
+	DevolucionesDAO devolucionesDAO = context.getBean("devolucionesDAOImpl",DevolucionesDAO.class);
+	//PedidoDAO PedidoDAO = context.getBean("pedidoDAOImpl",PedidoDAO.class);
 	
 	//CRUD : CREATE, READ, UPDATE, DELETE 
 	//
 	
 	//add
-	Devoluciones Devoluciones = new Devoluciones(0,5,new Date(),"Destrozado");
-	//DevolucionesDAO.add(Devoluciones);
+	Devoluciones devoluciones = new Devoluciones(0,new Date(),"Destrozado");
+	//devoluciones.setPedido(pedidoDAO.findOne(2));
+	devoluciones.setIdDevolucion(3);
+	devolucionesDAO.add(devoluciones);
 	
 	//up
-	Devoluciones Devoluciones2 = new Devoluciones(0,1,new Date(),"roto");	
+	Devoluciones Devoluciones2 = new Devoluciones(0,new Date(),"roto");	
 	//Devoluciones.up(Devoluciones2);
 	//1212dsadsa
 	
 	//del
 	//DevolucionesDAO.del(1);
-	System.out.println("**********************DEL***********************"+DevolucionesDAO.findOne(1));
+	System.out.println("**********************DEL***********************"+devolucionesDAO.findOne(1));
 	//finAll
 	//List<> Devoluciones = DevolucionesDAO.findAll();
 	
 	
-	DevolucionesDAO.findAll().forEach(item -> {System.out.println(item.toString());});
+	devolucionesDAO.findAll().forEach(item -> {System.out.println(item.toString());});
 	
 	context.close();
 			
