@@ -25,7 +25,7 @@ public class DetallesDevolucionesDAOImpl implements DetallesDevolucionesDAO {
     	
 		
 		Session session = sessionFactory.getCurrentSession();
-		return session.createQuery("from detallesdevoluciones",DetallesDevoluciones.class).getResultList();
+		return session.createQuery("from DetallesDevoluciones",DetallesDevoluciones.class).getResultList();
 	}
 
 	@Override

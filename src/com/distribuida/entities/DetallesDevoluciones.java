@@ -39,8 +39,8 @@ private Double precioUnitario;
 			Double precioUnitario) {
 		super();
 		this.idDetalleDevolucion = idDetalleDevolucion;
-		//this.idDevolucion = idDevolucion;
-		//this.idProducto = idProducto;
+		this.idDevolucion = idDevolucion;
+		this.idProducto = idProducto;
 		this.cantidad = cantidad;
 		this.precioUnitario = precioUnitario;
 	}
